@@ -14,7 +14,10 @@
         <tr>
             <td> <%= article.title %> </td>
             <td> <%= article.description %> </td>
-            <td> <%= "click to view (placeholder)" %> </td>
+
+            <td> <%= link_to 'Show', article_path(article) %> </td>
+            <td> <%= link_to 'Edit', article_path(article), data: {turbo_method: :edit} %> </td>
+            <td> <%= link_to 'Destroy', article_path(article), data: {turbo_method: :delete} %> </td>
         </tr>
         <%end%>
     </tbody>    
