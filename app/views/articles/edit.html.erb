@@ -1,0 +1,30 @@
+<h1>Edit an Article</h1>
+
+<% if @article.errors.any? %>
+    <h2> mistakes were made when creating an Article </h2>
+    <ul>
+    <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <%end%>
+    </ul>
+<% end %>
+
+<%= form_with(model: @article, local: true) do |f| %>
+
+    <p>
+        <%= f.label :title %> <br/> 
+        <%= f.text_field :title %>
+    </p>
+    <p>
+        <%= f.label :description %> <br/>
+        <%= f.text_field :description %>
+    </p>
+    <p>
+        <%= f.label :content %> <br/>
+        <%= f.text_area :content %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+
+<% end %>
