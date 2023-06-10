@@ -4,3 +4,6 @@
 <p class="text-center mt-4"><%= @article.content %></p>
 
 
+<%= link_to 'edit', edit_article_path(@article)%> | 
+<%= link_to 'destroy', article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure"}%> | 
+<%= link_to 'return to articles listing', articles_path%> 
