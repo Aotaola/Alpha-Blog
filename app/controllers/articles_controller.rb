@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-    before_action :set_article, only: [:show, :create, :edit, :update, :destroy]
+    before_action :set_article, only: [:show, :edit, :update, :destroy]
 
     def show
         # before action
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        # before action
+       @article = Article.new(article_params)
        if @article.save
             flash[:notice] = "Article was successfully created"
             redirect_to @article
