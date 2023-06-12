@@ -3,8 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.1"
 
+gem 'sassc-rails'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
+
+gem 'bootstrap', '~> 5.2.0'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -37,6 +41,8 @@ gem "redis", "~> 4.0"
 # gem "bcrypt", "~> 3.1.7"
 
 gem 'faker'
+
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
