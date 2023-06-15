@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+
 .navbar {
-    background-color: green;
+    background-color: rgb(20, 3, 106);
+}
+.navbar a {
+    color: white !important;
+    font-family: century;
+    font-size: 20px;
 }
