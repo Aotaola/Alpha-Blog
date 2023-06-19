@@ -1,40 +1,35 @@
-<% if @article.errors.any? %>
-    <h2> mistakes were made when creating an Article </h2>
-    <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-    <%end%>
-    </ul>
-<% end %>
-<div class= "row justify-content-center">
-    <div class="col-10">
-    <%= form_with(model: @article, class:"shadow p-3 mb-5 bg-info rounded ", local: true) do |f| %>
+<div class = "container">
+   <%=render 'shared/errors'%>
+    <div class= "row justify-content-center">
+        <div class="col-10">
+        <%= form_with(model: @article, class:"shadow p-3 mb-5 bg-info rounded ", local: true) do |f| %>
 
-        <div class= "form-group row">
-            <%= f.label :title, class: "col-2 col-form-label"%> <br/> 
-                <div class="col-10">
-            <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "title of your article" %>
-                </div>
-        </div>
-            <br/>
-        <div class="form-group row">
-            <%= f.label :description, class: "col-2 col-form-label" %> <br/>
-                <div class="col-10">
-            <%= f.text_area :description, rows: 2, class: "form-control shadow rounded", placeholder: "description of your article" %>
-                </div>
-        </div>
-        <br/>
-        <div class="form-group row">
-            <%= f.label :content, class: "col-2 col-form-label" %> <br/>
-            <div class="col-10">
-            <%= f.text_area :content, rows: 10, class: "form-control shadow rounded", placeholder: "body of your article" %>
+            <div class= "form-group row">
+                <%= f.label :title, class: "col-2 col-form-label"%> <br/> 
+                    <div class="col-10">
+                <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "title of your article" %>
+                    </div>
             </div>
-        </p>
-        <p>
-            <%= f.submit %>
-        </p>
+                <br/>
+            <div class="form-group row">
+                <%= f.label :description, class: "col-2 col-form-label" %> <br/>
+                    <div class="col-10">
+                <%= f.text_area :description, rows: 2, class: "form-control shadow rounded", placeholder: "description of your article" %>
+                    </div>
+            </div>
+            <br/>
+            <div class="form-group row">
+                <%= f.label :content, class: "col-2 col-form-label" %> <br/>
+                <div class="col-10">
+                <%= f.text_area :content, rows: 10, class: "form-control shadow rounded", placeholder: "body of your article" %>
+                </div>
+            </p>
+            <p>
+                <%= f.submit %>
+            </p>
 
-    <% end %>
+        <% end %>
+        </div>
+        <%= link_to 'cancel and return to articles listing', articles_path%> 
     </div>
-    <%= link_to 'cancel and return to articles listing', articles_path%> 
 </div>
