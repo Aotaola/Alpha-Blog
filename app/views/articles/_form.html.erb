@@ -6,23 +6,35 @@
     <%end%>
     </ul>
 <% end %>
+<div class= "row justify-content-center">
+    <div class="col-10">
+    <%= form_with(model: @article, class:"shadow p-3 mb-5 bg-info rounded ", local: true) do |f| %>
 
-<%= form_with(model: @article, local: true) do |f| %>
+        <div class= "form-group row">
+            <%= f.label :title, class: "col-2 col-form-label"%> <br/> 
+                <div class="col-10">
+            <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "title of your article" %>
+                </div>
+        </div>
+            <br/>
+        <div class="form-group row">
+            <%= f.label :description, class: "col-2 col-form-label" %> <br/>
+                <div class="col-10">
+            <%= f.text_area :description, rows: 2, class: "form-control shadow rounded", placeholder: "description of your article" %>
+                </div>
+        </div>
+        <br/>
+        <div class="form-group row">
+            <%= f.label :content, class: "col-2 col-form-label" %> <br/>
+            <div class="col-10">
+            <%= f.text_area :content, rows: 10, class: "form-control shadow rounded", placeholder: "body of your article" %>
+            </div>
+        </p>
+        <p>
+            <%= f.submit %>
+        </p>
 
-    <p>
-        <%= f.label :title %> <br/> 
-        <%= f.text_field :title %>
-    </p>
-    <p>
-        <%= f.label :description %> <br/>
-        <%= f.text_field :description %>
-    </p>
-    <p>
-        <%= f.label :content %> <br/>
-        <%= f.text_area :content %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
-
-<% end %>
+    <% end %>
+    </div>
+    <%= link_to 'cancel and return to articles listing', articles_path%> 
+</div>
