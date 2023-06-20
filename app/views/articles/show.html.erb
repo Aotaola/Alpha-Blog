@@ -1,9 +1,42 @@
-<h1>Showing Article Details <h1>
-<h2 class="text-center mt-4"><%= @article.title %></h2>
-<h3 class="text-center mt-4"><%= @article.description %></h3>
-<p class="text-center mt-4"><%= @article.content %></p>
+<div id="page-content">
+    <h1 class = "text-center mt-2 mb-2"> <%= @article.title %> </h1>
+
+        <div class= "container">
+
+            <div class = " row justify-content-md-center " >
+
+                <div class= "col-8 mt-4">
+                    <div class="card text-center">
+                    <div class="card-header font-italic">
+                        <ul class="nav nav-tabs card-header-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="true" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+
+                        </li>
+                        </ul>
+                    </div>
+                
+                <div class="card-body font-italic">
+                        <h3 class="card-text"><%= simple_format(@article.description) %></h3>
+                        <p class = "card-text"><%= simple_format(@article.content) %></p>
+
+                        <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-secondary" %> 
+                        <%= link_to 'Destroy', article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure"}, class: "btn btn-outline-danger" %>
+                </div>
+                    </div>
+                <div class = "card-footer text-muted">
+                    <small> Created <%= time_ago_in_words(@article.created_at)%> ago,
+                    edited <%= time_ago_in_words(@article.updated_at)%> ago.
+                </div>
+                </div>
+            </div>
+    </div>
+</div>
 
 
-<%= link_to 'edit', edit_article_path(@article)%> | 
-<%= link_to 'destroy', article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure"}%> | 
-<%= link_to 'return to articles listing', articles_path%> 
+  
