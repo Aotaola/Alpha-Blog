@@ -14,24 +14,31 @@
       <div class="container-fluid">
    <%= link_to 'Blog World', root_path, class: "navbar-brand", id: "logo"%>
         
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <%= link_to 'Home', root_path, class: "nav-link"%> 
-            </li>
-            <li class="nav-item">
-             <%= link_to 'Articles', articles_path, class: "nav-link"%> 
-            </li>
-            <li class="nav-item">
-               <%= link_to 'About', about_path, class: "nav-link"%> 
-            </li>
-            <li class="nav-item">
-             
-            </li>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to 'Home', root_path, class: "nav-link"%> 
+          </li>
+          <li class="nav-item">
+             <%= link_to 'About', about_path, class: "nav-link"%> 
           </ul>
+          <br/>
+      <div class="dropdown">
+       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">           
+       Articles
+        </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><%= link_to 'Articles', articles_path, class: "dropdown-item"%></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to 'Creeate new Article', new_articles_path, class: "dropdown-item"%></li>
+          </ul>
+      </div>
+    
+      </div>
+           
         </div>
       </div>
   </nav>
